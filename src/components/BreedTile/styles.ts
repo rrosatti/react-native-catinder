@@ -29,11 +29,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: horizontalScale(16),
     paddingVertical: verticalScale(8),
   },
-  nameLifeSpanContainer: {
+  nameAffectionLevelContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  nameLifeSpanText: {
+  nameAffectionLevelText: {
     fontFamily: Fonts.NunitoSansRegular,
     fontSize: moderateScale(16),
     lineHeight: verticalScale(20),
