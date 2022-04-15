@@ -9,24 +9,27 @@ export interface BreedTileProps {
   imgSrc: ImageSourcePropType;
   name: string;
   origin: string;
-  lifeSpan: string;
+  affectionLevel: number;
 }
 
 const BreedTile = ({
   imgSrc,
   name,
   origin,
-  lifeSpan,
+  affectionLevel,
 }: BreedTileProps): JSX.Element => {
+  console.log('AFfection level: ', affectionLevel);
   return (
     <View style={styles.container}>
       <Image source={imgSrc} style={styles.image} />
       <View style={styles.bottomContentContainer}>
-        <View style={styles.nameLifeSpanContainer}>
-          <Text style={styles.nameLifeSpanText}>{name}</Text>
+        <View style={styles.nameAffectionLevelContainer}>
+          <Text style={styles.nameAffectionLevelText}>{name}</Text>
           <View>
             <View>
-              <Text style={styles.nameLifeSpanText}>{lifeSpan}</Text>
+              <Text style={styles.nameAffectionLevelText}>
+                {affectionLevel}
+              </Text>
             </View>
           </View>
         </View>

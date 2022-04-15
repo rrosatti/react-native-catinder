@@ -9,9 +9,10 @@ import styles from './styles';
 
 interface BreedStackProps {
   items: BreedTileProps[];
+  loading: boolean;
 }
 
-const BreedStack = ({ items }: BreedStackProps): JSX.Element => {
+const BreedStack = ({ items, loading }: BreedStackProps): JSX.Element => {
   const Cards = React.useMemo(
     (): JSX.Element[] =>
       items.map((item) => (
@@ -25,11 +26,13 @@ const BreedStack = ({ items }: BreedStackProps): JSX.Element => {
     (): JSX.Element => (
       <View>
         <Text style={styles.noMoreCardsText}>
-          {"Sorry, there's no more cats.\nTry again later :-)"}
+          {loading
+            ? 'Loading...'
+            : "Sorry, there's no more cats.\nTry again later :-)"}
         </Text>
       </View>
     ),
-    [],
+    [loading],
   );
   return (
     <CardStack style={styles.container} renderNoMoreCards={NoMoreCards}>
