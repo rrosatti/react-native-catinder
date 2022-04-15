@@ -3,6 +3,8 @@ import { View } from 'react-native';
 
 import type { BreedTileProps } from '../../components/BreedTile';
 import BreedStack from '../../components/BreedStack';
+import NoButton from '../../components/NoButton';
+import LikeButton from '../../components/LikeButton';
 
 import styles from './styles';
 
@@ -30,10 +32,18 @@ const mockedInfo3: BreedTileProps = {
   origin: 'Canada',
 };
 
+const noOp = () => {};
+
 const Breeds = (): JSX.Element => {
   return (
     <View style={styles.container}>
       <BreedStack items={[mockedInfo, mockedInfo2, mockedInfo3]} />
+      <View style={styles.buttonsContainer}>
+        <NoButton onPress={noOp} />
+        <View style={styles.likeButtonContainer}>
+          <LikeButton onPress={noOp} />
+        </View>
+      </View>
     </View>
   );
 };
